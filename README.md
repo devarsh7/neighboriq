@@ -1,2 +1,81 @@
-# neighboriq
-AI-powered hyperlocal real estate intelligence platform
+# NeighborIQ
+
+A real estate intelligence tool that takes a neighborhood name and gives you an AI-generated market analysis in seconds — confidence score, price trends, risk flags, and a chat interface to ask follow-up questions.
+
+Built in as a prototype. The idea was simple: instead of spending hours reading listings and market reports, what if an AI agent did all of that and handed you a clear verdict?
+
+---
+
+## What it does
+
+You type in a neighborhood (e.g. "Leslieville, Toronto") and it runs a 5-step agent pipeline:
+
+1. Pulls neighborhood data — prices, days on market, rental yield, walkability
+2. Computes market signals — demand score, supply tightness, price momentum
+3. Calculates a confidence score (0–100) with a breakdown of what's driving it
+4. Generates a written market report using Claude
+5. Lets you ask follow-up questions in a chat interface, with full context
+
+There's also a compare mode where you can put up to 3 neighborhoods side by side.
+
+---
+
+## Stack
+
+- **LangGraph** — orchestrates the agent pipeline
+- **Claude** (Anthropic) — writes the report and answers questions
+- **FastAPI** — backend API
+- **Streamlit** — frontend
+- **Brave Search** — optional, for live news signals
+
+---
+
+## Setup
+
+```bash
+git clone https://github.com/devarsh7/neighboriq.git
+cd neighboriq
+
+python -m venv .venv
+.venv\Scripts\activate       # Windows
+# source .venv/bin/activate  # Mac/Linux
+
+pip install -r requirements.txt
+
+cp .env.example .env
+# Add your ANTHROPIC_API_KEY to .env
+```
+
+**Run the backend:**
+```bash
+set PYTHONPATH=C:\path\to\neighboriq
+uvicorn backend.main:app --reload --port 8000
+```
+
+**Run the frontend** (new terminal):
+```bash
+set PYTHONPATH=C:\path\to\neighboriq
+streamlit run frontend/app.py
+```
+
+Open [http://localhost:8501](http://localhost:8501)
+
+---
+
+## Preloaded neighborhoods
+
+The Annex, Leslieville, Liberty Village, Queen West, Scarborough (Toronto) · Brooklyn (New York) · Wynwood (Miami) · Mission District (San Francisco)
+
+Any other neighborhood will get a synthetic baseline estimate.
+
+---
+
+## API
+
+```
+GET  /health
+POST /analyze          {"neighborhood": "Leslieville", "city": "Toronto"}
+POST /analyze/compare  {"neighborhoods": [...]}
+POST /chat
+GET  /docs             Swagger UI
+```
