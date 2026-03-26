@@ -18,6 +18,21 @@ You type in a neighborhood (e.g. "Leslieville, Toronto") and it runs a 5-step ag
 
 There's also a compare mode where you can put up to 3 neighborhoods side by side.
 
+<img width="1528" height="731" alt="image" src="https://github.com/user-attachments/assets/056e4226-521c-4537-900b-23f85c4d309e" />
+
+
+<img width="1348" height="750" alt="image" src="https://github.com/user-attachments/assets/14b67c0e-f949-4a8b-bbdb-8c8821ebb783" />
+
+
+<img width="1411" height="696" alt="image" src="https://github.com/user-attachments/assets/6d0dccd3-9110-4283-94e3-437e62eea5c8" />
+
+
+<img width="1373" height="768" alt="image" src="https://github.com/user-attachments/assets/df1fd94a-7e02-4b2a-aa34-ca313e617d70" />
+
+
+
+
+
 ---
 
 ## Stack
