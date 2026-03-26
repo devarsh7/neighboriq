@@ -325,8 +325,6 @@ with tab_about:
     <div class="report-card">
     <p><strong style="color:#F0F0F8">NeighborIQ</strong> is an AI-native real estate intelligence
     platform that compresses hours of market research into seconds using a multi-agent pipeline.</p>
-    <p>Built to mirror how a world-class PropTech company automates market analysis —
-    not as a feature, but as the core product surface.</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -355,7 +353,6 @@ with tab_about:
         Frontend → Streamlit<br>
         Search → Brave MCP Server<br>
         <br>
-        <div style="color:#8888AA">Built in 1 day · AI-native architecture</div>
         </div>
         """, unsafe_allow_html=True)
 
